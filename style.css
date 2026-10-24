@@ -31,9 +31,9 @@
   --font-family-outfit:      "Outfit", "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-family-young-serif: "Young Serif", Georgia, "Times New Roman", serif;
 
-  --font-title:         var(--font-weight-normal) 2.2rem/1.1 var(--font-family-young-serif);
-  --font-heading:       var(--font-weight-normal) 2.1rem/1 var(--font-family-young-serif);
-  --font-card-heading:  var(--font-weight-semibold) 1.7rem/1 var(--font-family-outfit);
+  --font-title:         var(--font-weight-normal) 2.5rem/1.1 var(--font-family-young-serif);
+  --font-heading:       var(--font-weight-normal) 1.9rem/1.2 var(--font-family-young-serif);
+  --font-card-heading:  var(--font-weight-semibold) 1.4rem/1 var(--font-family-outfit);
   --font-body:          var(--font-weight-normal) 1rem/1.6 var(--font-family-outfit);
   --font-body-bold:     var(--font-weight-bold)   1rem/1.6 var(--font-family-outfit);
 
@@ -47,6 +47,7 @@
   --color-list-marker:       var(--brown-800);
   --color-card-list-marker:  var(--rose-800);
   --color-table-border:      var(--stone-150);
+  --color-section-separator: var(--stone-150);
 
   --color-main-background:   var(--white);
   --color-body-background:   var(--stone-100);
@@ -69,18 +70,23 @@ main {
 }
 
 article {
-  padding-inline: clamp(2rem, 5vw, 10rem);
+  padding-inline: clamp(2rem, 5vw, 3rem);
   padding-bottom: 2rem;
 }
 
+.section-separator {
+  border-top: 1px solid var(--color-section-separator);
+  margin-block: 2rem;
+}
+
 h1{
-  padding-block: 1.5rem;
+  padding-bottom: 1.5rem;
   font: var(--font-title);
   color: var(--color-text-title);
 }
 
 h2 {
-  padding-block: 1rem;
+  padding-bottom: 1rem;
   font: var(--font-heading);
   color: var(--color-text-heading);
 }
@@ -95,7 +101,7 @@ td {
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 ol > li {
@@ -110,7 +116,7 @@ ol > li::marker {
 
 ul > li {
   position: relative;
-  padding-left: 1.3rem;
+  padding-left: clamp(1.3rem, 5vw, 3rem);
   list-style: none;
 }
 
@@ -131,12 +137,14 @@ img {
 .thumbnail {
   width: 100%;
   height: clamp(10rem, 50vw, 40rem);
+  padding-bottom: 3rem;
 }
 
 
 .card {
   padding: 2rem;
   margin-block: 3rem;
+  border-radius: 1rem;
   background-color: var(--color-card-background);
 }
 
@@ -166,7 +174,7 @@ caption {
 }
 
 th, td {
-  height: 3rem;
+  height: 3.25rem;
   border-bottom: 1px solid var(--color-table-border);
 }
 
@@ -176,12 +184,14 @@ tbody tr:last-of-type td {
 }
 
 th {
-  width: 50%;
-  padding-left: 10%;
+  width: 40%;
+  padding-left: 5%;
+  font: var(--font-body);
 }
 
 td {
   width: 40%;
+  font: var(--font-body-bold);
 }
 
 
@@ -194,23 +204,24 @@ td {
   color: hsl(228, 45%, 44%);
 }
 
+
 @media (min-width: 1024px) {
   body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding-block: 5rem;
+    padding-block: 10rem;
   }
 
   main {
-    width: clamp(10rem, 70vw, 100rem);
-    border-radius: 3rem;
+    width: clamp(10rem, 70vw, 50rem);
+    border-radius: 1.4rem;
   }
 
   .thumbnail {
     border-radius: 4rem;
-    padding: 2rem;
+    padding: 3rem;
   }
 }
 
