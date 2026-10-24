@@ -136,7 +136,7 @@ img {
 
 .thumbnail {
   width: 100%;
-  height: clamp(10rem, 50vw, 40rem);
+  height: clamp(10rem, 50vw, 25rem);
   padding-bottom: 3rem;
 }
 
@@ -215,7 +215,7 @@ td {
   }
 
   main {
-    width: clamp(10rem, 70vw, 50rem);
+    width: clamp(10rem, 70vw, 49rem);
     border-radius: 1.4rem;
   }
 
