@@ -31,10 +31,11 @@
   --font-family-outfit:      "Outfit", "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-family-young-serif: "Young Serif", Georgia, "Times New Roman", serif;
 
-  --font-title:     var(--font-weight-normal) 2.5rem/1.1 var(--font-family-young-serif);
-  --font-heading:   var(--font-weight-normal) 2.1rem/1 var(--font-family-young-serif);
-  --font-body:      var(--font-weight-normal) 1rem/1.5 var(--font-family-outfit);
-  --font-body-bold: var(--font-weight-bold)   1rem/1.5 var(--font-family-outfit);
+  --font-title:         var(--font-weight-normal) 2.2rem/1.1 var(--font-family-young-serif);
+  --font-heading:       var(--font-weight-normal) 2.1rem/1 var(--font-family-young-serif);
+  --font-card-heading:  var(--font-weight-semibold) 1.7rem/1 var(--font-family-outfit);
+  --font-body:          var(--font-weight-normal) 1rem/1.6 var(--font-family-outfit);
+  --font-body-bold:     var(--font-weight-bold)   1rem/1.6 var(--font-family-outfit);
 
   --color-text-title:        var(--stone-900);
   --color-text-heading:      var(--brown-800);
@@ -45,6 +46,7 @@
   --color-card-background:   var(--rose-50);
   --color-list-marker:       var(--brown-800);
   --color-card-list-marker:  var(--rose-800);
+  --color-table-border:      var(--stone-150);
 }
 
 * {
@@ -58,12 +60,18 @@ body {
   color: var(--color-text-primary);
 }
 
+main {
+  padding-inline: clamp(2rem, 5vw, 10rem);
+}
+
 h1{
+  margin-block: 1.5rem;
   font: var(--font-title);
   color: var(--color-text-title);
 }
 
 h2 {
+  margin-block: 1rem;
   font: var(--font-heading);
   color: var(--color-text-heading);
 }
@@ -77,6 +85,32 @@ td {
   color: var(--color-text-table-value);
 }
 
+ol > li {
+  margin-left: 1.3rem;
+  padding-left: 1.3rem;
+}
+
+ol > li::marker {
+  font: var(--font-body-bold);
+  color: var(--color-list-marker);
+}
+
+ul > li {
+  position: relative;
+  padding-left: 1.3rem;
+  list-style: none;
+}
+
+ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+  color: var(--color-list-marker);
+}
+
 img {
   object-fit: cover;
 }
@@ -86,17 +120,57 @@ img {
   height: clamp(10rem, 50vw, 40rem);
 }
 
+
 .card {
+  padding: 2rem;
+  margin-block: 3rem;
   background-color: var(--color-card-background);
 }
 
 .card h2 {
+  margin-top: 0;
+  font: var(--font-card-heading);
   color: var(--color-text-card-title);
 }
 
-.card .marker {
+.card ol > li::marker,
+.card ul > li::before {
   color: var(--color-card-list-marker);
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+table * {
+  text-align: start;
+}
+
+caption {
+  margin-bottom: 1rem;
+}
+
+th, td {
+  height: 3rem;
+  border-bottom: 1px solid var(--color-table-border);
+}
+
+tbody tr:last-of-type th,
+tbody tr:last-of-type td {
+  border-bottom: none;
+}
+
+th {
+  width: 50%;
+  padding-left: 10%;
+}
+
+td {
+  width: 40%;
+}
+
 
 .attribution {
   font-size: 0.6875rem;
