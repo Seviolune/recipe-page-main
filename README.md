@@ -10,9 +10,9 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 
 ### Links
 
-- Github repository URL: [https://github.com/Seviolune/social-links-profile-main](https://github.com/Seviolune/social-links-profile-main)
-- Solution URL: [https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ)
-- Live Site URL: [https://seviolune.github.io/social-links-profile-main](https://seviolune.github.io/social-links-profile-main)
+- Github repository URL: [https://github.com/Seviolune/recipe-page-main](https://github.com/Seviolune/recipe-page-main)
+- Solution URL: [not uploaded yet](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ)
+- Live Site URL: [https://seviolune.github.io/recipe-page-main](https://seviolune.github.io/recipe-page-main)
 
 ## Author
 

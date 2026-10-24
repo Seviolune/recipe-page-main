@@ -47,6 +47,9 @@
   --color-list-marker:       var(--brown-800);
   --color-card-list-marker:  var(--rose-800);
   --color-table-border:      var(--stone-150);
+
+  --color-main-background:   var(--white);
+  --color-body-background:   var(--stone-100);
 }
 
 * {
@@ -58,20 +61,26 @@
 body {
   font: var(--font-body);
   color: var(--color-text-primary);
+  background-color: var(--color-body-background);
 }
 
 main {
+  background-color: var(--color-main-background);
+}
+
+article {
   padding-inline: clamp(2rem, 5vw, 10rem);
+  padding-bottom: 2rem;
 }
 
 h1{
-  margin-block: 1.5rem;
+  padding-block: 1.5rem;
   font: var(--font-title);
   color: var(--color-text-title);
 }
 
 h2 {
-  margin-block: 1rem;
+  padding-block: 1rem;
   font: var(--font-heading);
   color: var(--color-text-heading);
 }
@@ -83,6 +92,10 @@ strong {
 td {
   font: var(--font-body-bold);
   color: var(--color-text-table-value);
+}
+
+li {
+  margin-bottom: 0.5rem;
 }
 
 ol > li {
@@ -179,4 +192,34 @@ td {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 5rem;
+  }
+
+  main {
+    width: clamp(10rem, 70vw, 100rem);
+    border-radius: 3rem;
+  }
+
+  .thumbnail {
+    border-radius: 4rem;
+    padding: 2rem;
+  }
+}
+
+/* this is a terrible idea but i love how it looks lmao */
+@media (min-width: 1000px) and ( max-width: 1050px) and (prefers-reduced-motion: no-preference) {
+  body,
+  main,
+  .thumbnail {
+    transition: padding 0.1s ease,
+    width 0.1s ease;
+  }
 }
