@@ -1,3 +1,103 @@
+@font-face {
+  font-family: "Young Serif";
+  src: url("assets/fonts/young-serif/YoungSerif-Regular.ttf"), format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("assets/fonts/outfit/Outfit-VariableFont_wght.ttf"), format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --white:     hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800:  hsl(332, 51%, 32%);
+  --rose-50:   hsl(330, 100%, 98%);
+
+  --font-weight-normal:   400;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  --font-family-outfit:      "Outfit", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-family-young-serif: "Young Serif", Georgia, "Times New Roman", serif;
+
+  --font-title:     var(--font-weight-normal) 2.5rem/1.1 var(--font-family-young-serif);
+  --font-heading:   var(--font-weight-normal) 2.1rem/1 var(--font-family-young-serif);
+  --font-body:      var(--font-weight-normal) 1rem/1.5 var(--font-family-outfit);
+  --font-body-bold: var(--font-weight-bold)   1rem/1.5 var(--font-family-outfit);
+
+  --color-text-title:        var(--stone-900);
+  --color-text-heading:      var(--brown-800);
+  --color-text-primary:      var(--stone-600);
+  --color-text-table-value:  var(--brown-800);
+  --color-text-card-title:   var(--rose-800);
+
+  --color-card-background:   var(--rose-50);
+  --color-list-marker:       var(--brown-800);
+  --color-card-list-marker:  var(--rose-800);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: var(--font-body);
+  color: var(--color-text-primary);
+}
+
+h1{
+  font: var(--font-title);
+  color: var(--color-text-title);
+}
+
+h2 {
+  font: var(--font-heading);
+  color: var(--color-text-heading);
+}
+
+strong {
+  font: var(--font-body-bold);
+}
+
+td {
+  font: var(--font-body-bold);
+  color: var(--color-text-table-value);
+}
+
+img {
+  object-fit: cover;
+}
+
+.thumbnail {
+  width: 100%;
+  height: clamp(10rem, 50vw, 40rem);
+}
+
+.card {
+  background-color: var(--color-card-background);
+}
+
+.card h2 {
+  color: var(--color-text-card-title);
+}
+
+.card .marker {
+  color: var(--color-card-list-marker);
+}
+
 .attribution {
   font-size: 0.6875rem;
   text-align: center;
